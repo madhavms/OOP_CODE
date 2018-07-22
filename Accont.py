@@ -5,6 +5,7 @@ class Account:
         self.total=0
 
     def deposit(self, amount):
+
         self.total = self.total + amount
 
         return "BALANCE AFTER DEPOSIT RS:"+" "+str(self.total)+"\n"
@@ -13,7 +14,7 @@ class Account:
         self.total-=amount
         if(self.total<0):
             self.total+=amount
-            return "INSUFFICIENT BALANCE"
+            return "INSUFFICIENT BALANCE>>BALANCE Rs:"+" "+str(self.total)
 
         else:
             return "BALANCE AFTER WITHDRAWAL RS:"+" "+str(self.total)+" "
@@ -75,8 +76,9 @@ while(v):
             while (True):
 
                 f = input("ENTER THE ID TO BE TRANSFERED:" + "\n")
-                if (b < 5 and b>0):
-                    r = ls[b - 1]
+                if (f < 5 and f>0 and f!=b):
+                    k = ls[f - 1]
+
                     break
                 else:
                     print "INVALID ID>>RE-ENTER THE ID:" + "\n"
@@ -91,7 +93,7 @@ while(v):
                     print "INSUFFICIENT BALANCE>>BALANCE=Rs:" + " " + str(r.total)+"\n"
                     continue
                 else:
-                    print "BALANCE AFTER WITHDRAWAL Rs:" + " " + str(r.total)+"\n"
+                    print "BALANCE AFTER TRANSEFER Rs:" + " " + str(r.total)+"\n"
                     break
 
         elif (a == 'b'):
