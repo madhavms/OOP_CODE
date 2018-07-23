@@ -75,7 +75,7 @@ while(v):
 
             while (True):
 
-                f = input("ENTER THE ID TO BE TRANSFERED:" + "\n")
+                f = input("ENTER THE ID TO TRANSFER AMOUNT:(ID !="+" "+str(b)+')'+ "\n")
                 if (f < 5 and f>0 and f!=b):
                     k = ls[f - 1]  #object for ID to get transferred amount
 
