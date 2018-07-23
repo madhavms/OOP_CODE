@@ -62,7 +62,9 @@ while(v):
 
     while (y):
 
-        a = raw_input("LOGGED IN AS USER:"+" "+list[b-1]+"--> "+"ENTER YOUR CHOICE d=DEPOSIT t=TRANSFER b=BALANCE w=WITHDRAW q=LOGOUT:" + " "+"\n")
+        a = raw_input("LOGGED IN AS USER:"+" "+list[b-1]+"--> "+
+                      "ENTER YOUR CHOICE d=DEPOSIT t=TRANSFER b=BALANCE w=WITHDRAW q=LOGOUT:"
+                      "" + " "+"\n")
 
         if (a == 'd'):
             c = input("ENTER THE AMOUNT TO DESPOSIT:" + "\n")
