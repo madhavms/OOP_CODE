@@ -1,12 +1,12 @@
 class Account:
 
     def __init__(self,CustomerID):
-        self.ID = CustomerID
-        self.total=1000
+        self.ID = CustomerID  #creates id for each object
+        self.total=1000  #object.total=1000 ;deposits 1000 into each account
 
     def deposit(self, amount):
 
-        self.total = self.total + amount
+        self.total +=amount
 
         return "BALANCE AFTER DEPOSIT RS:"+" "+str(self.total)+"\n"
 
@@ -27,12 +27,12 @@ class Account:
 
 
         if(self.total<amount):
-            self.total = self.total - amount
+            self.total-=amount
 
 
         else:
-            self.total=self.total-amount
-            ID.total = ID.total + amount
+            self.total-=amount
+            ID.total+=amount
 
 
 A=Account(1)
@@ -87,7 +87,7 @@ while(v):
                 e = input("ENTER THE AMOUNT TO TRANSFER:" + "\n")
                 r.transfer(e, k) #transfers amount e from object r to object k
                 if (r.total < 0):
-                    r.total = r.total + e
+                    r.total+=e
                     print "INSUFFICIENT BALANCE>>BALANCE=Rs:" + " " + str(r.total)+"\n"
                     continue
                 else:
