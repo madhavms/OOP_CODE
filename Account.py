@@ -2,7 +2,7 @@ class Account:
 
     def __init__(self,CustomerID):
         self.ID = CustomerID
-        self.total=0
+        self.total=1000
 
     def deposit(self, amount):
 
@@ -36,27 +36,25 @@ class Account:
 
 
 A=Account(1)
-A.deposit(1000)
 B=Account(2)
-B.deposit(1000)
 C=Account(3)
-C.deposit(1000)
 D=Account(4)
-D.deposit(1000)
+
 
 x=True
 z=True
 y=True
 v=True
 ls=[A,B,C,D]
+list=['A','B','C','D']
 
 while(v):
 
     while (x):
 
-        b = input("ENTER USER 1=A,2=B,3=C,4=D:" + " "+"\n")
+        b = input("USER LOGIN : 1=A,2=B,3=C,4=D:" + " "+"\n")
         if(b<5 and b>0):
-            r=ls[b-1]
+            r=ls[b-1] #object for selected User ID
             break
         else:
             print"INVALID USER RE-ENTER"
@@ -64,7 +62,7 @@ while(v):
 
     while (y):
 
-        a = raw_input("ENTER YOUR CHOICE d=DEPOSIT t=TRANSFER b=BALANCE w=WITHDRAW q=QUIT:" + " "+"\n")
+        a = raw_input("LOGGED IN AS USER:"+" "+list[b-1]+"--> "+"ENTER YOUR CHOICE d=DEPOSIT t=TRANSFER b=BALANCE w=WITHDRAW q=LOGOUT:" + " "+"\n")
 
         if (a == 'd'):
             c = input("ENTER THE AMOUNT TO DESPOSIT:" + "\n")
@@ -77,7 +75,7 @@ while(v):
 
                 f = input("ENTER THE ID TO BE TRANSFERED:" + "\n")
                 if (f < 5 and f>0 and f!=b):
-                    k = ls[f - 1]
+                    k = ls[f - 1]  #object for ID to get transferred amount
 
                     break
                 else:
@@ -87,7 +85,7 @@ while(v):
             while (z):
 
                 e = input("ENTER THE AMOUNT TO TRANSFER:" + "\n")
-                r.transfer(e, k)
+                r.transfer(e, k) #transfers amount e from object r to object k
                 if (r.total < 0):
                     r.total = r.total + e
                     print "INSUFFICIENT BALANCE>>BALANCE=Rs:" + " " + str(r.total)+"\n"
@@ -109,23 +107,3 @@ while(v):
         else:
             print "Wrong Choice"+"\n"
             continue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
